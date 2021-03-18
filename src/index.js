@@ -1,5 +1,4 @@
 const express = require("express");
-const knex = require('./knex/knex.js');
 const path = require('path');
 
 const app = express();
@@ -23,7 +22,6 @@ app.use(express.json());
 app.use('/api', apiRouter);
 app.use('/admin', adminRouter);
 app.use('/', webRouter);
-app.use(knex);
 
 app.listen(port, () => {
   console.log(`App running port: ${port}`);
